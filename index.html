@@ -20,6 +20,24 @@
     <meta name="twitter:title" content="My Framer Site">
     <meta name="twitter:description" content="Made with Framer">
     
+    <script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script type="text/javascript">
+function sendEmail() {
+Email.send({
+Host : "smtp.elasticemail.com",
+Username : "mindy@portfolio.com",
+Password : "05256C284E4F40EB9F587F0B822DD5E2ED7D",
+To : "mindycaila@gmail.com",
+From : document.getElementById("email").value,
+Subject: "Sending Email using javascript with SMTPJS",
+Body: "Message",
+})
+.then(function (message) {
+alert("Mail has been sent successfully")
+});
+}
+</script>
     
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin=""><link rel="canonical" href="https://bashful-updates-509047.framer.app/contact"><link rel="modulepreload" href="https://framerusercontent.com/sites/zq8iPkHmd6U2D7qLUZxSS/chunk-27T3OKES.mjs">
 <link rel="modulepreload" href="https://framerusercontent.com/sites/zq8iPkHmd6U2D7qLUZxSS/chunk-ELYU6EKT.mjs">
@@ -59,14 +77,14 @@
     <!-- name input -->
     <input type="text" name="name" placeholder="Name"><br>
     <!-- email input -->
-    <input type="email" name="email" placeholder="Email"><br>
+    <input type="email" id="email" name="email" placeholder="Email"><br>
     <!-- message input -->
     <textarea type="text" name="message" placeholder="Message"></textarea><br>
     <!-- sent -->
     <div class="message">Message Sent</div>
     <div class="button">
       <!-- button -->
-    <button id="submit" type="submit">
+    <button id="submit" type="submit" onClick="sendEmail()">
       Send
     </button>
     </div>
